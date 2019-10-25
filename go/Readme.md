@@ -1,19 +1,18 @@
 #go build server.go
 #docker build -t server:go .
-#docker run --rm -d --net=host server:fastgo
+#docker run --rm -d --net=host server:go
 
-# /usr/local/bin/wrk -t2 -c100 --latency http://localhost/static/file1m.txt
-Running 10s test @ http://localhost/static/file1m.txt
+# /usr/local/bin/wrk -t2 -c100 --latency http://localhost
+Running 10s test @ http://localhost
   2 threads and 100 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.23ms    1.81ms  70.61ms   93.64%
-    Req/Sec    45.55k     7.30k   64.91k    75.00%
+    Latency     2.20ms    1.96ms  28.52ms   86.98%
+    Req/Sec    24.70k     2.71k   30.88k    75.50%
   Latency Distribution
-     50%    0.86ms
-     75%    1.11ms
-     90%    2.00ms
-     99%    7.65ms
-  908240 requests in 10.04s, 129.06MB read
-Requests/sec:  90487.64
-Transfer/sec:     12.86MB
-
+     50%    1.68ms
+     75%    2.76ms
+     90%    4.05ms
+     99%   10.21ms
+  492784 requests in 10.03s, 60.62MB read
+Requests/sec:  49133.40
+Transfer/sec:      6.04MB

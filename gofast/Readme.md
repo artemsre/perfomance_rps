@@ -3,18 +3,17 @@
 #docker build -t server:fastgo .
 #docker run --rm -d --net=host server:fastgo
 
-# /usr/local/bin/wrk -t2 -c100 --latency http://localhost/static/file1m.txt
-Running 10s test @ http://localhost/static/file1m.txt
+# /usr/local/bin/wrk -t2 -c100 --latency http://localhost
+Running 10s test @ http://localhost
   2 threads and 100 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency     1.23ms    1.81ms  70.61ms   93.64%
-    Req/Sec    45.55k     7.30k   64.91k    75.00%
+    Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.76ms    2.27ms  32.93ms   86.36%
+    Req/Sec    42.63k    18.00k   82.84k    64.52%
   Latency Distribution
-     50%    0.86ms
-     75%    1.11ms
-     90%    2.00ms
-     99%    7.65ms
-  908240 requests in 10.04s, 129.06MB read
-Requests/sec:  90487.64
-Transfer/sec:     12.86MB
-
+     50%  762.00us
+     75%    2.13ms
+     90%    5.03ms
+     99%    9.49ms
+  264300 requests in 3.14s, 40.82MB read
+Requests/sec:  84139.34
+Transfer/sec:     12.16MB
